@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+
+TOOLS_DIR=tools
+
+function github_online_version() {
+    curl --no-progress-meter -s -I "$1" | grep -i ^location | awk '{print $2}' | xargs dirname | xargs basename
+}
+
+function download_to() {
+    echo ;
+    echo "Downloading $1 ..."
+    curl --location --output "$2" "$1"
+}
+
+function upgrade_from_github() {
+    local github_url="${1}"
+    local destination="${2}"
+    local version_file="${3}"
+
+    local current_version="$(cat "$version_file")"
+    local online_version="$(github_online_version "$github_url")"
+
+    if [ "$current_version" == "$online_version" ]; then
+        echo "Upgrade $destination: already on $current_version"
+        return 0
+    fi
+
+    echo "$online_version" >"$version_file"
+    download_to "$github_url" "$destination"
+    chmod +x "$destination"
+    echo "Upgrade $destination: upgrade from $current_version to $online_version"
+    return 0
+}
+
+function install_from_github() {
+    local github_url="${1}"
+    local destination="${2}"
+    local version_file="${3}"
+
+    local current_version="$(github_online_version "$github_url")"
+    download_to "$github_url" "$destination"
+    echo "$current_version" >"$version_file"
+    chmod +x "$destination"
+    echo "Installed $destination: version $current_version"
+}
+
+function install_upgrade() {
+    local destination="${TOOLS_DIR}/${3}"
+    local version_file="${TOOLS_DIR}/.${3}.version"
+    local github_url="https://github.com/${1}/releases/latest/download/${2}"
+
+    if [ -f "$destination" -a -f "$version_file" ]; then
+        upgrade_from_github "$github_url" "$destination" "$version_file" && return 0
+    fi
+
+    install_from_github "$github_url" "$destination" "$version_file"
+}
+
+mkdir -p "$TOOLS_DIR"
+
+install_upgrade FriendsOfPHP/PHP-CS-Fixer php-cs-fixer.phar php-cs-fixer
+install_upgrade squizlabs/PHP_CodeSniffer phpcbf.phar phpcbf
+install_upgrade squizlabs/PHP_CodeSniffer phpcs.phar phpcs
+install_upgrade phpstan/phpstan phpstan.phar phpstan
+install_upgrade vimeo/psalm psalm.phar psalm

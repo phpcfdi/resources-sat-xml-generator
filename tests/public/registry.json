@@ -1,0 +1,17 @@
+[
+    {
+        "description": "Items",
+        "xsd": "http://localhost:8999/xml/items.xsd",
+        "xslt": "http://localhost:8999/xml/items.xslt"
+    },
+    {
+        "description": "Ticket",
+        "xsd": "http://localhost:8999/xml/entities/ticket.xsd",
+        "xslt": "http://localhost:8999/xml/entities/ticket.xslt"
+    },
+    {
+        "description": "Books",
+        "xsd": "http://localhost:8999/xml/articles/books.xsd",
+        "xslt": "http://localhost:8999/xml/articles/books.xslt"
+    }
+]

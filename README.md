@@ -8,7 +8,7 @@
 [![Coverage Status][badge-coverage]][coverage]
 [![Total Downloads][badge-downloads]][downloads]
 
-> PHP library to deal with Mexican RFC
+> Programa PHP para generar los recursos desde los archivos XSD y XSLT del SAT para CFDI.
 
 :us: The documentation of this project is in spanish as this is the natural language for intented audience.
 

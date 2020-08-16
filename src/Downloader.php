@@ -37,7 +37,6 @@ final class Downloader implements DownloaderInterface
                     'dnt' => '1', // do not track
                     'Accept' => 'application/xml',
                     'Accept-Charset' => 'utf-8',
-                    'Accept-Encoding' => 'gzip, deflate',
                     'Cache-Control' => 'no-transform',
                 ],
             ]);

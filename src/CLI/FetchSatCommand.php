@@ -28,7 +28,7 @@ final class FetchSatCommand extends Command
                 new InputOption('ns-registry', 'r', InputOption::VALUE_REQUIRED, 'Namespace registry location'),
                 new InputOption('ignore', null, InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY, 'Ignore location'),
                 new InputArgument('destination-path', InputArgument::REQUIRED, 'Path to store the resources'),
-                new InputArgument('type', InputArgument::OPTIONAL, 'FetchCommand type: all, xsd or xslt'),
+                new InputArgument('type', InputArgument::OPTIONAL, 'Fetch type: all, xsd or xslt'),
             ])
         );
     }

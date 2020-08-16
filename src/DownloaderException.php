@@ -15,7 +15,7 @@ class DownloaderException extends Exception
     /** @var string */
     private $destination;
 
-    public function __construct(string $source, string $destination, Throwable $previous)
+    public function __construct(string $source, string $destination, Throwable $previous = null)
     {
         parent::__construct("Unable to download $source to $destination", 0, $previous);
         $this->source = $source;

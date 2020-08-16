@@ -33,7 +33,7 @@ final class NsRegistry
             throw new RuntimeException('Namespace registry contents is not an array of entries', 0, $exception);
         }
         $entries = [];
-        /** @var array<string, mixed> $entry */
+        /** @var array<string, string|null> $entry */
         foreach ($baseEntries as $entry) {
             $entries[] = new NsEntry(
                 strval($entry['xsd'] ?? ''),

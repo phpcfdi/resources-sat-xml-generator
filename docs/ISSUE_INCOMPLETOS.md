@@ -1,7 +1,9 @@
-# Indisponibilidad de recursos en el sitio del SAT
+# Recursos no disponibles en el sitio del SAT
 
 *2020-06-15* Desconocemos exactamente la razón, pero comúnmente los archivos del SAT no se encuentran disponibles
 o bien generan errores al generar las descargas.
+
+*2020-11-12* Al parecer estos problemas se han corregido en el SAT, ya no he visto el problema
 
 Al solicitar la url `http://www.sat.gob.mx/sitio_internet/cfd/catalogos/Nomina/catNomina.xsd` entrega un contenido
 incompleto, que falla al momento de abrirlo como un archivo XML.

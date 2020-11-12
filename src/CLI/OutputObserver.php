@@ -18,9 +18,9 @@ final class OutputObserver implements ObserverInterface
         $this->output = $output;
     }
 
-    public function onFetch(string $source, string $destination): void
+    public function onFetch(string $sourceUrl, string $destinationPath): void
     {
-        $this->output->writeln("<info>Fetching $source to $destination</info>");
+        $this->output->writeln("<info>Fetching $sourceUrl to $destinationPath</info>");
     }
 
     public function onDownload(string $source, string $destination): void

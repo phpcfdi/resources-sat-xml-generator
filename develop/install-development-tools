@@ -23,7 +23,7 @@ function install_on() {
     local version_file="${3}"
     local version_content="${4}"
 
-    curl --no-progress-meter --location --output "$destination" "$github_url"
+    curl --location --output "$destination" "$github_url"
     echo "$version_content" >"$version_file"
     chmod +x "$destination"
 }

@@ -10,7 +10,7 @@
 
 > Programa PHP para generar los recursos desde los archivos XSD y XSLT del SAT para CFDI.
 
-:us: The documentation of this project is in spanish as this is the natural language for intented audience.
+:us: The documentation of this project is in spanish as this is the natural language for the intended audience.
 
 Este proyecto fue creado con el propósito de generar una copia local utilizable de los archivos XSD y XSLT del SAT.
 
@@ -68,7 +68,7 @@ docker run -it --rm --volume /tmp/output:/tmp/output --user="$(id -u):$(id -g)" 
 
 ## Problemas conocidos
 
-- [Indisponibilidad de recursos en el sitio del SAT](docs/ISSUE_INCOMPLETOS.md)
+- [Recursos no disponibles en el sitio del SAT](docs/ISSUE_INCOMPLETOS.md)
 
 ## Soporte
 
@@ -77,7 +77,7 @@ Puedes obtener soporte abriendo un ticker en Github.
 Adicionalmente, esta librería pertenece a la comunidad [PhpCfdi](https://www.phpcfdi.com), así que puedes usar los
 mismos canales de comunicación para obtener ayuda de algún miembro de la comunidad.
 
-## Compatilibilidad
+## Compatibilidad
 
 Esta librería se mantendrá compatible con al menos la versión con
 [soporte activo de PHP](https://www.php.net/supported-versions.php) más reciente.

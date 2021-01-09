@@ -43,18 +43,18 @@
         ],
         "dev:build": ["@dev:fix-style", "@dev:test"],
         "dev:check-style": [
-            "tools/php-cs-fixer fix --dry-run --verbose",
-            "tools/phpcs --colors -sp src/ tests/"
+            "@php tools/php-cs-fixer fix --dry-run --verbose",
+            "@php tools/phpcs --colors -sp src/ tests/"
         ],
         "dev:fix-style": [
-            "tools/php-cs-fixer fix --verbose",
-            "tools/phpcbf --colors -sp src/ tests/"
+            "@php tools/php-cs-fixer fix --verbose",
+            "@php tools/phpcbf --colors -sp src/ tests/"
         ],
         "dev:test": [
             "@dev:check-style",
-            "vendor/bin/phpunit --testdox --verbose --stop-on-failure",
-            "tools/phpstan analyse --no-progress --level max src/ tests/",
-            "tools/psalm --no-progress"
+            "@php vendor/bin/phpunit --testdox --verbose --stop-on-failure",
+            "@php tools/phpstan analyse --no-progress --level max src/ tests/",
+            "@php tools/psalm --no-progress"
         ],
         "dev:coverage": [
             "@php -dzend_extension=xdebug.so vendor/bin/phpunit --testdox --coverage-html build/coverage/html/"

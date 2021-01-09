@@ -4,8 +4,9 @@
 
 Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
-## Versión UNRELEASED 2020-11-12
+## Versión 1.1.1 2021-01-08
 
+- Los comandos de `composer dev:*` se ejecutan usando `@php`.
 - Se corrige el build porque `psalm` detecta que el método `OutputObserver::onFetch` no está
   respetando el nombre de los argumentos de la interfaz. Es una medida preventiva a PHP 8.0.
 - Se actualiza `develop/install-development-tools` a la versión 0.0.20201110.

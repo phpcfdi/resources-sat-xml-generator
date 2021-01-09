@@ -59,7 +59,7 @@ docker build resources-sat-xml-generator -t resources-sat-xml-generator
 ```
 
 Para ejecutar la imagen generando los archivos en `/tmp/output`,
-los archivos pertenecerán a el usuario que está ejecutando el comando:
+los archivos pertenecerán al usuario que está ejecutando el comando:
 
 ```shell
 docker run -it --rm --volume /tmp/output:/tmp/output --user="$(id -u):$(id -g)" \
@@ -98,7 +98,7 @@ formato de almacenamiento.
 ## Contribuciones
 
 Las contribuciones con bienvenidas. Por favor lee [CONTRIBUTING][] para más detalles
-y recuerda revisar el archivo de tareas pendientes [TODO][] y el [CHANGELOG][].
+y recuerda revisar el archivo de tareas pendientes [TODO][] y el archivo [CHANGELOG][].
 
 ## Copyright and License
 

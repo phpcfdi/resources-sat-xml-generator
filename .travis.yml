@@ -9,15 +9,16 @@ cache:
 
 before_script:
   - phpenv config-rm xdebug.ini || true
-  - travis_retry composer install --no-interaction --no-progress --prefer-dist
+  - travis_retry composer self-update --stable --2 --no-interaction
+  - travis_retry composer update --no-interaction --prefer-dist
   - travis_retry bash develop/install-development-tools
 
 script:
-  - tools/phpcs -sp src/ tests/
-  - tools/php-cs-fixer fix --dry-run --verbose
-  - vendor/bin/phpunit --testdox --verbose
-  - tools/phpstan analyse --level max --no-progress --verbose src/ tests/
-  - tools/psalm --no-progress
+  - php tools/phpcs -sp src/ tests/
+  - php tools/php-cs-fixer fix --dry-run --verbose
+  - php vendor/bin/phpunit --testdox --verbose
+  - php tools/phpstan analyse --level max --no-progress --verbose src/ tests/
+  - php tools/psalm --no-progress
 
 notifications:
   email:

@@ -6,8 +6,8 @@ filter:
 build:
   dependencies:
     override:
-      - composer self-update --no-interaction --no-progress
-      - composer install --no-interaction --no-progress
+      - composer self-update --stable --2 --no-interaction
+      - composer update --no-interaction --prefer-dist
   nodes:
     analysis:
       tests:

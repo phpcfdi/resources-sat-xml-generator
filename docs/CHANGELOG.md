@@ -14,6 +14,7 @@ Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 - Se corrigen algunas faltas ortográficas del archivo README.
 - Actualización y traducción del código de conducta.
 - Actualización y traducción de la guía de contribución.
+- Se actualiza el proceso de construcción en Travis-CI y Scrutinizer.
 
 ## Versión 1.1.0 2020-08-16
 

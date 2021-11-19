@@ -25,6 +25,9 @@ class Fetcher
         $xmlRetrievers = $this->createXmlRetrievers($destinationPath);
 
         foreach ($locations as $location) {
+            if ('' === $location) {
+                continue;
+            }
             $this->observer->onFetch($location, $destinationPath);
             $xmlRetriever = $xmlRetrievers->obtainRetrieverForUrl($location);
             $xmlRetriever->retrieve($location);

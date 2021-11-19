@@ -4,6 +4,13 @@
 
 Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
+## Versión 1.1.2 2021-11-19
+
+- Algunos registros de espacios de nombres podrían tener la dirección vacía,
+  como en el caso de *Carta Porte 2.0* donde aún no está publicada la dirección
+  del archivo XSLT. Se modifica para que cuando la dirección no existe entonces
+  simplemente sea ignorada.
+
 ## Versión 1.1.1 2021-01-08
 
 - Actualización del año en la licencia, ¡feliz 2021 desde PhpCfdi!

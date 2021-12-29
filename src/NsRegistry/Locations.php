@@ -40,6 +40,7 @@ final class Locations implements IteratorAggregate
     /** @return Traversable<string> */
     public function getIterator()
     {
+        /* @phpstan-ignore-next-line */
         return new ArrayIterator($this->locations);
     }
 }

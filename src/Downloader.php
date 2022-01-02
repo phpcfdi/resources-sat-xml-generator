@@ -18,6 +18,9 @@ final class Downloader implements DownloaderInterface
     /** @var ObserverInterface */
     private $observer;
 
+    /** @var array<string, string> */
+    private $overrides = [];
+
     public function __construct(ObserverInterface $observer, ?HttpClientInterface $httpClient = null)
     {
         $this->observer = $observer;
@@ -32,7 +35,7 @@ final class Downloader implements DownloaderInterface
                 $this->observer->onSkip($source, $destination);
                 return;
             }
-            $response = $this->httpClient->request('GET', $source, [
+            $response = $this->httpClient->request('GET', $this->getOverride($source), [
                 'headers' => [
                     'dnt' => '1', // do not track
                     'Accept' => 'application/xml',
@@ -50,5 +53,28 @@ final class Downloader implements DownloaderInterface
             $this->observer->onError($exception);
             throw $exception;
         }
+    }
+
+    public function setOverridePairs(string ...$overridePairs): void
+    {
+        foreach ($overridePairs as $overridePair) {
+            $overridePair = (string) preg_replace('/\s+/', ' ', $overridePair);
+            [$source, $override] = explode(' ', $overridePair, 2);
+            $this->setOverride($source, $override);
+        }
+    }
+
+    public function setOverride(string $source, string $override): void
+    {
+        if ($source === $override || '' === $override || str_contains($override, ' ')) {
+            return;
+        }
+
+        $this->overrides[$source] = $override;
+    }
+
+    private function getOverride(string $source): string
+    {
+        return $this->overrides[$source] ?? $source;
     }
 }

@@ -27,9 +27,10 @@ final class FetchSatCommand extends Command
             new InputDefinition([
                 new InputOption('ns-registry', 'r', InputOption::VALUE_REQUIRED, 'Namespace registry location'),
                 new InputOption('ignore', null, InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY, 'Ignore location'),
+                new InputOption('override', null, InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY, 'Override location (source => destination)'),
                 new InputArgument('destination-path', InputArgument::REQUIRED, 'Path to store the resources'),
                 new InputArgument('type', InputArgument::OPTIONAL, 'Fetch type: all, xsd or xslt'),
-            ])
+            ]),
         );
     }
 
@@ -49,11 +50,14 @@ final class FetchSatCommand extends Command
         $destinationPath = $input->getArgument('destination-path');
         /** @var string[] $ignoredLocations */
         $ignoredLocations = $input->getOption('ignore');
+        /** @var string[] $overridePairs */
+        $overridePairs = $input->getOption('override');
 
         $registry = NsRegistry::load($registryLocation);
         $locations = $registry->obtainLocations($downloadXsd, $downloadXslt, ...$ignoredLocations);
 
         $fetcher = new Fetcher(new OutputObserver($output));
+        $fetcher->getDownloader()->setOverridePairs(...$overridePairs);
         $fetcher->fetch($destinationPath, $locations);
 
         return 0;

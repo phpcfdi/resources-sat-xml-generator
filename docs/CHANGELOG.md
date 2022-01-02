@@ -4,6 +4,27 @@
 
 Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
+## Versión 1.2.0 2022-01-02
+
+- Se agrega la opción para poder sobreescribir el origen de un recurso a descargar `--override="source-url override-url"`.
+  Esta opción es importante porque el SAT tiene incorrectamente publicada la ubicación
+  de *Pagos 2.0*, donde la dirección `http://www.sat.gob.mx/sitio_internet/cfd/Pagos/Pagos20.xslt`
+  se encuentra realmente en `http://www.sat.gob.mx/sitio_internet/cfd/Pagos/pagos20.xslt`.
+
+Se han agregado diversas actualizaciones al entorno de desarrollo:
+
+- Se actualiza el archivo de licencia, Feliz 2022.
+- Se cambia el nombre de la versión principal de `master` a `main`.
+- Se cambia la dependencia de desarrollo de `fzaninotto/faker` a `fakerphp/faker`
+- Se cambia el administrador de herramientas de desarrollo a `phive`.
+- Se actualiza `php-cs-fixer` y su archivo de configuración.
+- Se migra la CI de Travis CI a GitHub Workflows.
+- Se actualiza el archivo de configuración de PHPUnit.
+- Se actualiza el código de conducta.
+- Se actualiza el archivo de guía de contribución.
+- Se renombra el archivo de configuración de Psalm.
+- Se cambió la imagen de Docker de PHP 7.4 a PHP 8.0.
+
 ## Versión 1.1.2 2021-11-19
 
 - Algunos registros de espacios de nombres podrían tener la dirección vacía,

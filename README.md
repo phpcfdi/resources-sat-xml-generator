@@ -69,6 +69,7 @@ docker run -it --rm --volume /tmp/output:/tmp/output --user="$(id -u):$(id -g)" 
 ## Problemas conocidos
 
 - [Recursos no disponibles en el sitio del SAT](docs/ISSUE_INCOMPLETOS.md)
+- [Recursos con nombres incorrectos en el sitio del SAT](docs/ISSUE_RESOURCES_NAMES.md)
 
 ## Soporte
 
@@ -106,22 +107,22 @@ The `phpcfdi/resources-sat-xml-generator` library is copyright © [PhpCfdi](http
 and licensed for use under the MIT License (MIT). Please see [LICENSE][] for more information.
 
 
-[contributing]: https://github.com/phpcfdi/resources-sat-xml-generator/blob/master/CONTRIBUTING.md
-[changelog]: https://github.com/phpcfdi/resources-sat-xml-generator/blob/master/docs/CHANGELOG.md
-[todo]: https://github.com/phpcfdi/resources-sat-xml-generator/blob/master/docs/TODO.md
+[contributing]: https://github.com/phpcfdi/resources-sat-xml-generator/blob/main/CONTRIBUTING.md
+[changelog]: https://github.com/phpcfdi/resources-sat-xml-generator/blob/main/docs/CHANGELOG.md
+[todo]: https://github.com/phpcfdi/resources-sat-xml-generator/blob/main/docs/TODO.md
 
 [source]: https://github.com/phpcfdi/resources-sat-xml-generator
 [release]: https://github.com/phpcfdi/resources-sat-xml-generator/releases
-[license]: https://github.com/phpcfdi/resources-sat-xml-generator/blob/master/LICENSE
-[build]: https://travis-ci.com/phpcfdi/resources-sat-xml-generator?branch=master
+[license]: https://github.com/phpcfdi/resources-sat-xml-generator/blob/main/LICENSE
+[build]: https://github.com/phpcfdi/resources-sat-xml-generator/actions/workflows/build.yml?query=branch:main
 [quality]: https://scrutinizer-ci.com/g/phpcfdi/resources-sat-xml-generator/
-[coverage]: https://scrutinizer-ci.com/g/phpcfdi/resources-sat-xml-generator/code-structure/master/code-coverage
+[coverage]: https://scrutinizer-ci.com/g/phpcfdi/resources-sat-xml-generator/code-structure/main/code-coverage
 [downloads]: https://packagist.org/packages/phpcfdi/resources-sat-xml-generator
 
 [badge-source]: http://img.shields.io/badge/source-phpcfdi/resources--sat--xml--generator-blue?style=flat-square
 [badge-release]: https://img.shields.io/github/release/phpcfdi/resources-sat-xml-generator?style=flat-square
 [badge-license]: https://img.shields.io/github/license/phpcfdi/resources-sat-xml-generator?style=flat-square
-[badge-build]: https://img.shields.io/travis/com/phpcfdi/resources-sat-xml-generator/master?style=flat-square
-[badge-quality]: https://img.shields.io/scrutinizer/g/phpcfdi/resources-sat-xml-generator/master?style=flat-square
-[badge-coverage]: https://img.shields.io/scrutinizer/coverage/g/phpcfdi/resources-sat-xml-generator/master?style=flat-square
+[badge-build]: https://img.shields.io/github/workflow/status/phpcfdi/resources-sat-xml-generator/build/main?style=flat-square
+[badge-quality]: https://img.shields.io/scrutinizer/g/phpcfdi/resources-sat-xml-generator/main?style=flat-square
+[badge-coverage]: https://img.shields.io/scrutinizer/coverage/g/phpcfdi/resources-sat-xml-generator/main?style=flat-square
 [badge-downloads]: https://img.shields.io/packagist/dt/phpcfdi/resources-sat-xml-generator?style=flat-square

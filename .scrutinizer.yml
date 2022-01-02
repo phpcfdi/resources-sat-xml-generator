@@ -6,7 +6,6 @@ filter:
 build:
   dependencies:
     override:
-      - composer self-update --stable --2 --no-interaction
       - composer update --no-interaction --prefer-dist
   nodes:
     analysis:

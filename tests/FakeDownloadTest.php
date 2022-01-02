@@ -45,11 +45,9 @@ final class FakeDownloadTest extends TestCase
         $finder->files()->in(__DIR__ . '/public/xml/');
         $expectedFiles = array_map(
             function (SplFileInfo $file): string {
-                $expectedFile = $file->getPathname();
-                $expectedFile = str_replace(__DIR__ . '/public/', '/localhost/', $expectedFile);
-                return $expectedFile;
+                return str_replace(__DIR__ . '/public/', '/localhost/', $file->getPathname());
             },
-            iterator_to_array($finder)
+            iterator_to_array($finder),
         );
 
         foreach ($expectedFiles as $expectedFile) {

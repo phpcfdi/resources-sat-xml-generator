@@ -15,9 +15,18 @@ class Fetcher
     /** @var ObserverInterface */
     private $observer;
 
+    /** @var Downloader */
+    private $downloader;
+
     public function __construct(ObserverInterface $observer)
     {
         $this->observer = $observer;
+        $this->downloader = new Downloader($observer);
+    }
+
+    public function getDownloader(): Downloader
+    {
+        return $this->downloader;
     }
 
     public function fetch(string $destinationPath, Locations $locations): void
@@ -36,10 +45,9 @@ class Fetcher
 
     private function createXmlRetrievers(string $destinationPath): XmlRetrievers
     {
-        $downloader = new Downloader($this->observer);
         return new XmlRetrievers(
-            new XmlRetriever(new XsdRetriever($destinationPath, $downloader), 'xsd'),
-            new XmlRetriever(new XsltRetriever($destinationPath, $downloader), 'xsl', 'xslt'),
+            new XmlRetriever(new XsdRetriever($destinationPath, $this->downloader), 'xsd'),
+            new XmlRetriever(new XsltRetriever($destinationPath, $this->downloader), 'xsl', 'xslt'),
         );
     }
 }

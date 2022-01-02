@@ -32,13 +32,13 @@ final class Locations implements IteratorAggregate
             $this->locations,
             function (string $current) use ($locationToExclude): bool {
                 return ! in_array($current, $locationToExclude, true);
-            }
+            },
         );
         return new self(...$filtered);
     }
 
-    /** @return Traversable<string> */
-    public function getIterator()
+    /** @return Traversable<int, string> */
+    public function getIterator(): Traversable
     {
         return new ArrayIterator($this->locations);
     }

@@ -1,4 +1,4 @@
-Use this folder to perform tests, is the public root folder for PHP intetnal web server.
+Use this folder to perform tests, is the public root folder for PHP internal web server.
 
 ```shell
 php -S 127.0.0.1:8999 -t tests/public/

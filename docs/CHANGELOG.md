@@ -4,6 +4,10 @@
 
 Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
+## Unreleased 2022-02-22
+
+Se corrige el archivo de configuración de `psalm.xml.dist` porque el atributo `totallytyped` ha sido deprecado. 
+
 ## Versión 1.2.0 2022-01-02
 
 - Se agrega la opción para poder sobreescribir el origen de un recurso a descargar `--override="source-url override-url"`.

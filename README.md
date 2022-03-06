@@ -73,7 +73,7 @@ docker run -it --rm --volume /tmp/output:/tmp/output --user="$(id -u):$(id -g)" 
 
 ## Soporte
 
-Puedes obtener soporte abriendo un ticker en Github.
+Puedes obtener soporte abriendo un ticket en Github.
 
 Adicionalmente, esta librería pertenece a la comunidad [PhpCfdi](https://www.phpcfdi.com), así que puedes usar los
 mismos canales de comunicación para obtener ayuda de algún miembro de la comunidad.

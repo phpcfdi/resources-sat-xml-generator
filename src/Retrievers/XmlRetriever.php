@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhpCfdi\ResourcesSatXmlGenerator\Retrievers;
 
-use XmlResourceRetriever\RetrieverInterface;
+use Eclipxe\XmlResourceRetriever\RetrieverInterface;
 
 final class XmlRetriever
 {

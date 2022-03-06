@@ -4,6 +4,11 @@
 
 Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
+## Versión 2.0.0 2022-03-06
+
+Se actualiza la versión de `eclipxe/xmlresourceretriever` a `2.0`.
+Esto rompe la compatibilidad porque las clases cambian de dependencias en el espacio de nombres.
+
 ## Unreleased 2022-02-22
 
 Se corrige el archivo de configuración de `psalm.xml.dist` porque el atributo `totallytyped` ha sido deprecado. 

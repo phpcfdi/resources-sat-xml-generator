@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace PhpCfdi\ResourcesSatXmlGenerator;
 
+use Eclipxe\XmlResourceRetriever\XsdRetriever;
+use Eclipxe\XmlResourceRetriever\XsltRetriever;
 use PhpCfdi\ResourcesSatXmlGenerator\NsRegistry\Locations;
 use PhpCfdi\ResourcesSatXmlGenerator\Retrievers\XmlRetriever;
 use PhpCfdi\ResourcesSatXmlGenerator\Retrievers\XmlRetrievers;
-use XmlResourceRetriever\XsdRetriever;
-use XmlResourceRetriever\XsltRetriever;
 
 class Fetcher
 {

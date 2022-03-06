@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace PhpCfdi\ResourcesSatXmlGenerator;
 
+use Eclipxe\XmlResourceRetriever\Downloader\DownloaderInterface;
 use Exception;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Throwable;
-use XmlResourceRetriever\Downloader\DownloaderInterface;
 
 final class Downloader implements DownloaderInterface
 {

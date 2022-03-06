@@ -9,6 +9,9 @@ Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 Se actualiza la versión de `eclipxe/xmlresourceretriever` a `2.0`.
 Esto rompe la compatibilidad porque las clases cambian de dependencias en el espacio de nombres.
 
+Se actualiza el requerimiento de PHP para usar la versión mínima 8.0.
+De igual forma, las dependencias a los componentes de Symfony cambian su versión mínima a 6.0.
+
 ## Unreleased 2022-02-22
 
 Se corrige el archivo de configuración de `psalm.xml.dist` porque el atributo `totallytyped` ha sido deprecado. 

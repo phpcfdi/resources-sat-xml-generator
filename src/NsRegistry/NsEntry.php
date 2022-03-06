@@ -6,16 +6,8 @@ namespace PhpCfdi\ResourcesSatXmlGenerator\NsRegistry;
 
 final class NsEntry
 {
-    /** @var string */
-    private $xsd;
-
-    /** @var string */
-    private $xslt;
-
-    public function __construct(string $xsd, string $xslt)
+    public function __construct(private string $xsd, private string $xslt)
     {
-        $this->xsd = $xsd;
-        $this->xslt = $xslt;
     }
 
     public function getXsd(): string

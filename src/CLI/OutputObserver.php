@@ -10,12 +10,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 final class OutputObserver implements ObserverInterface
 {
-    /** @var OutputInterface */
-    private $output;
-
-    public function __construct(OutputInterface $output)
+    public function __construct(private OutputInterface $output)
     {
-        $this->output = $output;
     }
 
     public function onFetch(string $sourceUrl, string $destinationPath): void

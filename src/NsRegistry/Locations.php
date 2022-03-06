@@ -14,7 +14,7 @@ use Traversable;
 final class Locations implements IteratorAggregate
 {
     /** @var string[] */
-    private $locations;
+    private array $locations;
 
     public function __construct(string ...$locations)
     {
@@ -30,9 +30,7 @@ final class Locations implements IteratorAggregate
     {
         $filtered = array_filter(
             $this->locations,
-            function (string $current) use ($locationToExclude): bool {
-                return ! in_array($current, $locationToExclude, true);
-            },
+            fn (string $current): bool => ! in_array($current, $locationToExclude, true),
         );
         return new self(...$filtered);
     }

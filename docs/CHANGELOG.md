@@ -12,6 +12,8 @@ Esto rompe la compatibilidad porque las clases cambian de dependencias en el esp
 Se actualiza el requerimiento de PHP para usar la versión mínima 8.0.
 De igual forma, las dependencias a los componentes de Symfony cambian su versión mínima a 6.0.
 
+Se usa *temporalmente* [`rector`](https://getrector.org/) para cambiar el código del proyecto a PHP 8.0.
+
 ## Unreleased 2022-02-22
 
 Se corrige el archivo de configuración de `psalm.xml.dist` porque el atributo `totallytyped` ha sido deprecado. 

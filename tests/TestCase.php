@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 abstract class TestCase extends PHPUnitTestCase
 {
     /** @var string[] */
-    private $temporaryFolders;
+    private array $temporaryFolders;
 
     public function urlTest(string $path): string
     {

@@ -12,7 +12,7 @@ use Symfony\Component\Finder\SplFileInfo;
 /**
  * This test case create the application using specific arguments,
  * then run fetch:sat using a fake registry and storing all the data
- * into a temporary folder, it expect that all xml files were downloaded.
+ * into a temporary folder, it expects that all xml files were downloaded.
  *
  * Important:
  *  - Is using local php web server http://localhost:8999/ using ./public/ as docroot
@@ -44,9 +44,7 @@ final class FakeDownloadTest extends TestCase
         $finder = new Finder();
         $finder->files()->in(__DIR__ . '/public/xml/');
         $expectedFiles = array_map(
-            function (SplFileInfo $file): string {
-                return str_replace(__DIR__ . '/public/', '/localhost/', $file->getPathname());
-            },
+            fn (SplFileInfo $file): string => str_replace(__DIR__ . '/public/', '/localhost/', $file->getPathname()),
             iterator_to_array($finder),
         );
 

@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhpCfdi\ResourcesSatXmlGenerator\Tests;
+namespace PhpCfdi\ResourcesSatXmlGenerator\Tests\Integration;
 
 use PhpCfdi\ResourcesSatXmlGenerator\CLI\Application;
+use PhpCfdi\ResourcesSatXmlGenerator\Tests\TestCase;
 use Symfony\Component\Console\Tester\ApplicationTester;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
@@ -42,9 +43,10 @@ final class FakeDownloadTest extends TestCase
         $this->assertStringNotContainsString('FAIL', $tester->getDisplay());
 
         $finder = new Finder();
-        $finder->files()->in(__DIR__ . '/public/xml/');
+        $testDirectory = dirname(__DIR__);
+        $finder->files()->in($testDirectory . '/public/xml/');
         $expectedFiles = array_map(
-            fn (SplFileInfo $file): string => str_replace(__DIR__ . '/public/', '/localhost/', $file->getPathname()),
+            fn (SplFileInfo $file): string => str_replace($testDirectory . '/public/', '/localhost/', $file->getPathname()),
             iterator_to_array($finder),
         );
 

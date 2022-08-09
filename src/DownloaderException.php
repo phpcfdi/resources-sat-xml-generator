@@ -7,7 +7,7 @@ namespace PhpCfdi\ResourcesSatXmlGenerator;
 use Exception;
 use Throwable;
 
-class DownloaderException extends Exception
+final class DownloaderException extends Exception
 {
     private string $source;
 
@@ -15,7 +15,10 @@ class DownloaderException extends Exception
 
     public function __construct(string $source, string $destination, Throwable $previous = null)
     {
-        parent::__construct("Unable to download $source to $destination", 0, $previous);
+        parent::__construct(
+            message: "Unable to download $source to $destination",
+            previous: $previous
+        );
         $this->source = $source;
         $this->destination = $destination;
     }

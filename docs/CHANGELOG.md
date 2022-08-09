@@ -14,6 +14,11 @@ De igual forma, las dependencias a los componentes de Symfony cambian su versió
 
 Se usa *temporalmente* [`rector`](https://getrector.org/) para cambiar el código del proyecto a PHP 8.0.
 
+Se corrige el proceso de construcción de cobertura de código en Scrutinizer-CI.
+
+Se organiza la carpeta de pruebas `tests` estableciendo el tipo de prueba (integración o unitaria)
+y moviendo los archivos de trabajo a la carpeta `tests/_files`.
+
 Se actualiza el flujo de trabajo de integración continua.
 
 Se actualizan las herramientas de desarrollo.

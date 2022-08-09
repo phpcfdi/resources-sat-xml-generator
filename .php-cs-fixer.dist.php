@@ -37,9 +37,11 @@ return (new PhpCsFixer\Config())
         'concat_space' => ['spacing' => 'one'],
         'linebreak_after_opening_tag' => true,
         // symfony:risky
+        'no_alias_functions' => true,
         'self_accessor' => true,
         // contrib
         'not_operator_with_successor_space' => true,
+        'ordered_imports' => ['imports_order' => ['class', 'function', 'const']], // @PSR12 sort_algorithm: none
     ])
     ->setFinder(
         PhpCsFixer\Finder::create()

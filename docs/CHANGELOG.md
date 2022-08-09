@@ -14,6 +14,10 @@ De igual forma, las dependencias a los componentes de Symfony cambian su versió
 
 Se usa *temporalmente* [`rector`](https://getrector.org/) para cambiar el código del proyecto a PHP 8.0.
 
+Se actualiza el flujo de trabajo de integración continua.
+
+Se actualizan las herramientas de desarrollo.
+
 ## Unreleased 2022-02-22
 
 Se corrige el archivo de configuración de `psalm.xml.dist` porque el atributo `totallytyped` ha sido deprecado. 

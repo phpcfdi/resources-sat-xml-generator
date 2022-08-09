@@ -17,7 +17,7 @@ final class DownloaderException extends Exception
     {
         parent::__construct(
             message: "Unable to download $source to $destination",
-            previous: $previous
+            previous: $previous,
         );
         $this->source = $source;
         $this->destination = $destination;

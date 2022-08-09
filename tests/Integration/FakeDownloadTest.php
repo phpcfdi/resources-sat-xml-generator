@@ -16,7 +16,7 @@ use Symfony\Component\Finder\SplFileInfo;
  * into a temporary folder, it expects that all xml files were downloaded.
  *
  * Important:
- *  - Is using local php web server http://localhost:8999/ using ./public/ as docroot
+ *  - Is using local php web server http://localhost:8999/ using tests/_files/public/ as docroot
  *  - The temporary created folder is removed on test case tear down
  *  - Is not using the global namespace registry, is using a fake located at http://localhost:8999/registry.json
  */
@@ -44,9 +44,9 @@ final class FakeDownloadTest extends TestCase
 
         $finder = new Finder();
         $testDirectory = dirname(__DIR__);
-        $finder->files()->in($testDirectory . '/public/xml/');
+        $finder->files()->in($testDirectory . '/_files/public/xml/');
         $expectedFiles = array_map(
-            fn (SplFileInfo $file): string => str_replace($testDirectory . '/public/', '/localhost/', $file->getPathname()),
+            fn (SplFileInfo $file): string => str_replace($testDirectory . '/_files/public/', '/localhost/', $file->getPathname()),
             iterator_to_array($finder),
         );
 

@@ -1,7 +1,7 @@
 Use this folder to perform tests, is the public root folder for PHP internal web server.
 
 ```shell
-php -S 127.0.0.1:8999 -t tests/public/
+php -S 127.0.0.1:8999 -t tests/_files/public/
 ```
 
 The port number `8999` is hardcoded and every file inside `public/` that links to another file is using the

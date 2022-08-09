@@ -15,7 +15,7 @@ call_user_func(function (): void {
         'php -S %s:%d -t %s > /dev/null 2>&1 & echo $!',
         '127.0.0.1',
         '8999',
-        escapeshellarg(__DIR__ . '/public/'),
+        escapeshellarg(__DIR__ . '/_files/public/'),
     );
 
     // Execute the command and store the process ID

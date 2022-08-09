@@ -4,19 +4,15 @@ declare(strict_types=1);
 
 namespace PhpCfdi\ResourcesSatXmlGenerator\Retrievers;
 
-use XmlResourceRetriever\RetrieverInterface;
+use Eclipxe\XmlResourceRetriever\RetrieverInterface;
 
 final class XmlRetriever
 {
-    /** @var RetrieverInterface */
-    private $retriever;
-
     /** @var string[] */
-    private $extensions;
+    private array $extensions;
 
-    public function __construct(RetrieverInterface $retriever, string ...$extensions)
+    public function __construct(private RetrieverInterface $retriever, string ...$extensions)
     {
-        $this->retriever = $retriever;
         $this->extensions = $extensions;
     }
 

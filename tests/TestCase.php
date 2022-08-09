@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 abstract class TestCase extends PHPUnitTestCase
 {
     /** @var string[] */
-    private $temporaryFolders;
+    private array $temporaryFolders;
 
     public function urlTest(string $path): string
     {
@@ -33,13 +33,13 @@ abstract class TestCase extends PHPUnitTestCase
         return realpath(__DIR__ . '/../build/') ?: '';
     }
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
         $this->temporaryFolders = [];
     }
 
-    public function tearDown(): void
+    protected function tearDown(): void
     {
         foreach ($this->temporaryFolders as $temporaryFolder) {
             $command = sprintf('rm -rf %s', escapeshellarg($temporaryFolder));

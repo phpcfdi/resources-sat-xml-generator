@@ -10,7 +10,7 @@ use RuntimeException;
 final class NsRegistry
 {
     /** @var NsEntry[] */
-    private $entries;
+    private array $entries;
 
     public function __construct(NsEntry ...$entries)
     {
@@ -24,7 +24,6 @@ final class NsRegistry
             throw new RuntimeException("Unable to open $location");
         }
         try {
-            /** @var mixed $baseEntries */
             $baseEntries = json_decode($contents, true, 512, JSON_THROW_ON_ERROR);
             if (! is_array($baseEntries)) {
                 throw new RuntimeException('Namespace registry contents is not an array of entries');
@@ -46,17 +45,13 @@ final class NsRegistry
     /** @return string[] */
     public function obtainXsdLocations(): array
     {
-        return array_map(function (NsEntry $entry): string {
-            return $entry->getXsd();
-        }, $this->entries);
+        return array_map(fn (NsEntry $entry): string => $entry->getXsd(), $this->entries);
     }
 
     /** @return string[] */
     public function obtainXsltLocations(): array
     {
-        return array_map(function (NsEntry $entry): string {
-            return $entry->getXslt();
-        }, $this->entries);
+        return array_map(fn (NsEntry $entry): string => $entry->getXslt(), $this->entries);
     }
 
     public function obtainLocations(bool $includeXsd, bool $includeXslt, string ...$excludeLocations): Locations
@@ -68,7 +63,6 @@ final class NsRegistry
         if ($includeXslt) {
             $locations = $locations->append(...$this->obtainXsltLocations());
         }
-        $locations = $locations->exclude(...$excludeLocations);
-        return $locations;
+        return $locations->exclude(...$excludeLocations);
     }
 }

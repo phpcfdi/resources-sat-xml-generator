@@ -54,7 +54,11 @@ final class Downloader implements DownloaderInterface
     {
         foreach ($overridePairs as $overridePair) {
             $overridePair = (string) preg_replace('/\s+/', ' ', $overridePair);
-            [$source, $override] = explode(' ', $overridePair, 2);
+            $overridePairParts = explode(' ', $overridePair, 2);
+            if (! isset($overridePairParts[0], $overridePairParts[1])) {
+                continue;
+            }
+            [$source, $override] = $overridePairParts;
             $this->setOverride($source, $override);
         }
     }

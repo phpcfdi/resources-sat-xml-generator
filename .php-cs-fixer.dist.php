@@ -28,7 +28,7 @@ return (new PhpCsFixer\Config())
         'object_operator_without_whitespace' => true,
         'binary_operator_spaces' => true,
         'phpdoc_scalar' => true,
-        'no_trailing_comma_in_singleline_array' => true,
+        'no_trailing_comma_in_singleline' => true,
         'single_quote' => true,
         'no_singleline_whitespace_before_semicolons' => true,
         'no_unused_imports' => true,
@@ -36,6 +36,7 @@ return (new PhpCsFixer\Config())
         'standardize_not_equals' => true,
         'concat_space' => ['spacing' => 'one'],
         'linebreak_after_opening_tag' => true,
+        'fully_qualified_strict_types' => true,
         // symfony:risky
         'no_alias_functions' => true,
         'self_accessor' => true,

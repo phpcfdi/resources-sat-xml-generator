@@ -39,7 +39,7 @@ git clone https://github.com/phpcfdi/resources-sat-xml-generator resources-sat-x
 cd resources-sat-xml-generator
 composer install
 php bin/resources-sat-xml-generator fetch:sat xml-resources/ all
-``` 
+```
 
 ## Uso básico
 
@@ -51,7 +51,7 @@ php bin/resources-sat-xml-generator fetch http://...
 
 En el repositorio se encuentran los archivos para construir la *imagen* de docker y así ejecutar el *contenedor*.
 
-Para construir la imagen con el nombre `resources-sat-xml-generator`: 
+Para construir la imagen con el nombre `resources-sat-xml-generator`:
 
 ```shell
 git clone https://github.com/phpcfdi/resources-sat-xml-generator.git
@@ -122,7 +122,7 @@ and licensed for use under the MIT License (MIT). Please see [LICENSE][] for mor
 [badge-source]: http://img.shields.io/badge/source-phpcfdi/resources--sat--xml--generator-blue?style=flat-square
 [badge-release]: https://img.shields.io/github/release/phpcfdi/resources-sat-xml-generator?style=flat-square
 [badge-license]: https://img.shields.io/github/license/phpcfdi/resources-sat-xml-generator?style=flat-square
-[badge-build]: https://img.shields.io/github/workflow/status/phpcfdi/resources-sat-xml-generator/build/main?style=flat-square
+[badge-build]: https://img.shields.io/github/actions/workflow/status/phpcfdi/resources-sat-xml-generator/build.yml?branch=main&style=flat-square
 [badge-quality]: https://img.shields.io/scrutinizer/g/phpcfdi/resources-sat-xml-generator/main?style=flat-square
 [badge-coverage]: https://img.shields.io/scrutinizer/coverage/g/phpcfdi/resources-sat-xml-generator/main?style=flat-square
 [badge-downloads]: https://img.shields.io/packagist/dt/phpcfdi/resources-sat-xml-generator?style=flat-square

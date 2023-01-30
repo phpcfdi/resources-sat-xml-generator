@@ -4,6 +4,18 @@
 
 Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
+## Versión 2.0.1 2023-01-30
+
+- Se corrige un posible bug en `Downloader` al dividir un texto en dos partes.
+  La segunda parte podría no existir y no estaba tratado correctamente.
+- Se le da mantenimiento a el proyecto:
+  - Actualización de licencia. Feliz 2023.
+  - Actualización del emblema de construcción.
+  - Se agrega PHP 8.2 a la matrix de pruebas.
+  - Se usa PHP 8.2 en la mayoría de los flujos de trabajo.
+  - Se actualizan las herramientas de desarrollo.
+  - Se actualizan las configuraciones de revisión y corrección de estilo de código.
+
 ## Versión 2.0.0 2022-03-06
 
 Se actualiza la versión de `eclipxe/xmlresourceretriever` a `2.0`.
@@ -25,7 +37,7 @@ Se actualizan las herramientas de desarrollo.
 
 ## Unreleased 2022-02-22
 
-Se corrige el archivo de configuración de `psalm.xml.dist` porque el atributo `totallytyped` ha sido deprecado. 
+Se corrige el archivo de configuración de `psalm.xml.dist` porque el atributo `totallytyped` ha sido deprecado.
 
 ## Versión 1.2.0 2022-01-02
 

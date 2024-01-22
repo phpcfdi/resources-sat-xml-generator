@@ -11,7 +11,7 @@ use Traversable;
 /**
  * @implements IteratorAggregate<string>
  */
-final class Locations implements IteratorAggregate
+final readonly class Locations implements IteratorAggregate
 {
     /** @var string[] */
     private array $locations;

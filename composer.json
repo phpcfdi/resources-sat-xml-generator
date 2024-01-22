@@ -15,16 +15,16 @@
         "issues": "https://github.com/phpcfdi/resources-sat-xml-generator/issues"
     },
     "require": {
-        "php": ">=8.0",
+        "php": ">=8.3",
         "ext-json": "*",
         "eclipxe/xmlresourceretriever": "^2.0.1",
-        "symfony/http-client": "^6.0",
-        "symfony/console": "^6.0"
+        "symfony/http-client": "^7.0",
+        "symfony/console": "^7.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.1",
+        "phpunit/phpunit": "^10.5",
         "fakerphp/faker": "^1.17",
-        "symfony/finder": "^6.0"
+        "symfony/finder": "^7.0"
     },
     "autoload": {
         "psr-4": {
@@ -48,12 +48,12 @@
         ],
         "dev:test": [
             "@dev:check-style",
-            "@php vendor/bin/phpunit --testdox --verbose --stop-on-failure",
+            "@php vendor/bin/phpunit --testdox --stop-on-failure",
             "@php tools/phpstan analyse --no-progress",
             "@php tools/psalm --no-progress"
         ],
         "dev:coverage": [
-            "@php -dzend_extension=xdebug.so -dxdebug.mode=coverage vendor/bin/phpunit --verbose --coverage-html build/coverage/html/"
+            "@php -dzend_extension=xdebug.so -dxdebug.mode=coverage vendor/bin/phpunit --coverage-html build/coverage/html/"
         ]
     },
     "scripts-descriptions": {

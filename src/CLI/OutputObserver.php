@@ -8,7 +8,7 @@ use PhpCfdi\ResourcesSatXmlGenerator\DownloaderException;
 use PhpCfdi\ResourcesSatXmlGenerator\ObserverInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-final class OutputObserver implements ObserverInterface
+final readonly class OutputObserver implements ObserverInterface
 {
     public function __construct(private OutputInterface $output)
     {

@@ -10,7 +10,7 @@ use PhpCfdi\ResourcesSatXmlGenerator\NsRegistry\Locations;
 use PhpCfdi\ResourcesSatXmlGenerator\Retrievers\XmlRetriever;
 use PhpCfdi\ResourcesSatXmlGenerator\Retrievers\XmlRetrievers;
 
-class Fetcher
+readonly class Fetcher
 {
     private Downloader $downloader;
 

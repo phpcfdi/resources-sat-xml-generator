@@ -6,7 +6,7 @@ namespace PhpCfdi\ResourcesSatXmlGenerator\Retrievers;
 
 use Eclipxe\XmlResourceRetriever\RetrieverInterface;
 
-final class XmlRetriever
+final readonly class XmlRetriever
 {
     /** @var string[] */
     private array $extensions;

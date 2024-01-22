@@ -19,6 +19,7 @@ abstract class TestCase extends PHPUnitTestCase
 
     public function createFolderForTest(): string
     {
+        /** @noinspection SpellCheckingInspection */
         $command = sprintf('mktemp --directory --tmpdir=%s', escapeshellarg($this->localBuildDir()));
         $temporaryFolder = trim(strval(shell_exec($command)));
         if ('' === $temporaryFolder) {

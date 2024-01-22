@@ -12,12 +12,12 @@ use Throwable;
 
 final class Downloader implements DownloaderInterface
 {
-    private HttpClientInterface $httpClient;
+    private readonly HttpClientInterface $httpClient;
 
     /** @var array<string, string> */
     private array $overrides = [];
 
-    public function __construct(private ObserverInterface $observer, ?HttpClientInterface $httpClient = null)
+    public function __construct(private readonly ObserverInterface $observer, ?HttpClientInterface $httpClient = null)
     {
         $this->httpClient = $httpClient ?? HttpClient::create();
     }

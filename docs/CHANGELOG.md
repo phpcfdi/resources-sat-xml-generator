@@ -4,6 +4,10 @@
 
 Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
+## Versión 3.0.0 2024-01-22
+
+- Se actualiza la versión mínima de PHP a 8.1.
+
 ## Mantenimiento 2024-01-22
 
 - Se actualiza la imagen de docker para que esté basada en PHP 8.3.

@@ -10,7 +10,7 @@ use RuntimeException;
 final class NsRegistry
 {
     /** @var NsEntry[] */
-    private array $entries;
+    private readonly array $entries;
 
     public function __construct(NsEntry ...$entries)
     {

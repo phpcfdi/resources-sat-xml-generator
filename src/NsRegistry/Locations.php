@@ -14,7 +14,7 @@ use Traversable;
 final class Locations implements IteratorAggregate
 {
     /** @var string[] */
-    private array $locations;
+    private readonly array $locations;
 
     public function __construct(string ...$locations)
     {

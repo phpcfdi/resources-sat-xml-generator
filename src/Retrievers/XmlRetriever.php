@@ -9,9 +9,9 @@ use Eclipxe\XmlResourceRetriever\RetrieverInterface;
 final class XmlRetriever
 {
     /** @var string[] */
-    private array $extensions;
+    private readonly array $extensions;
 
-    public function __construct(private RetrieverInterface $retriever, string ...$extensions)
+    public function __construct(private readonly RetrieverInterface $retriever, string ...$extensions)
     {
         $this->extensions = $extensions;
     }

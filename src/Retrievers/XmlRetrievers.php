@@ -9,7 +9,7 @@ use RuntimeException;
 final class XmlRetrievers
 {
     /** @var XmlRetriever[] */
-    private array $xmlRetrievers;
+    private readonly array $xmlRetrievers;
 
     public function __construct(XmlRetriever ...$xmlRetrievers)
     {

@@ -12,9 +12,9 @@ use PhpCfdi\ResourcesSatXmlGenerator\Retrievers\XmlRetrievers;
 
 class Fetcher
 {
-    private Downloader $downloader;
+    private readonly Downloader $downloader;
 
-    public function __construct(private ObserverInterface $observer)
+    public function __construct(private readonly ObserverInterface $observer)
     {
         $this->downloader = new Downloader($observer);
     }

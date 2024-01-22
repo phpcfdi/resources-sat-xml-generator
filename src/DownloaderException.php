@@ -9,9 +9,9 @@ use Throwable;
 
 final class DownloaderException extends Exception
 {
-    private string $source;
+    private readonly string $source;
 
-    private string $destination;
+    private readonly string $destination;
 
     public function __construct(string $source, string $destination, Throwable $previous = null)
     {

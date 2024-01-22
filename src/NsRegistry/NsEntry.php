@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace PhpCfdi\ResourcesSatXmlGenerator\NsRegistry;
 
-final class NsEntry
+final readonly class NsEntry
 {
-    public function __construct(private readonly string $xsd, private readonly string $xslt)
+    public function __construct(private string $xsd, private string $xslt)
     {
     }
 

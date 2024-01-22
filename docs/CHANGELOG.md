@@ -6,7 +6,7 @@ Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
 ## Versión 3.0.0 2024-01-22
 
-- Se actualiza la versión mínima de PHP a 8.1.
+- Se actualiza la versión mínima de PHP a 8.2.
 
 ## Mantenimiento 2024-01-22
 

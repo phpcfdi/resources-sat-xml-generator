@@ -15,7 +15,7 @@
         "issues": "https://github.com/phpcfdi/resources-sat-xml-generator/issues"
     },
     "require": {
-        "php": ">=8.1",
+        "php": ">=8.2",
         "ext-json": "*",
         "eclipxe/xmlresourceretriever": "^2.0.1",
         "symfony/http-client": "^6.0",

@@ -22,6 +22,7 @@ Importante: **Cambiar la versión en `Application::__construct`**.
   - Se agrega PHP 8.3 a la matriz de pruebas.
   - Se ejecutan los flujos de trabajo en PHP 8.3.
   - Se permite ejecutar manualmente el flujo de trabajo.
+- Se migra de Scrutinizer-CI a SonarCloud. ¡Gracias Scrutinizer-CI!
 - Se actualizan las herramientas de desarrollo.
 
 ## Versión 2.0.1 2023-01-30

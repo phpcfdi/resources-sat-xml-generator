@@ -4,6 +4,18 @@
 
 Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
+## Mantenimiento 2024-01-22
+
+- Se actualiza la imagen de docker para que esté basada en PHP 8.3.
+- Se cambia el archivo de licencia. ¡Feliz 2024!
+- Se corrige el ancla del proyecto en el archivo `CONTRIBUTING.md`.
+- Se actualiza el archivo de configuración de `php-cs-fixer`.
+- Se actualizan los flujos de trabajo de GitHub:
+  - Se agrega PHP 8.3 a la matriz de pruebas.
+  - Se ejecutan los flujos de trabajo en PHP 8.3.
+  - Se permite ejecutar manualmente el flujo de trabajo.
+- Se actualizan las herramientas de desarrollo.
+
 ## Versión 2.0.1 2023-01-30
 
 - Se corrige un posible bug en `Downloader` al dividir un texto en dos partes.

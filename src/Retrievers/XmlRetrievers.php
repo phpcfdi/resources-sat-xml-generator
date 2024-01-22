@@ -6,10 +6,10 @@ namespace PhpCfdi\ResourcesSatXmlGenerator\Retrievers;
 
 use RuntimeException;
 
-final class XmlRetrievers
+final readonly class XmlRetrievers
 {
     /** @var XmlRetriever[] */
-    private readonly array $xmlRetrievers;
+    private array $xmlRetrievers;
 
     public function __construct(XmlRetriever ...$xmlRetrievers)
     {

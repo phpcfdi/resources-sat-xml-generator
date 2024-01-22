@@ -17,6 +17,7 @@ final class FetchCommand extends Command
 {
     protected static $defaultName = 'fetch:urls';
 
+    /** @noinspection PhpMissingParentCallCommonInspection */
     protected function configure(): void
     {
         $this->setDescription('Fetch xsd or xslt resources and store them on destination folder');
@@ -29,7 +30,8 @@ final class FetchCommand extends Command
         );
     }
 
-    public function execute(InputInterface $input, OutputInterface $output): int
+    /** @noinspection PhpMissingParentCallCommonInspection */
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         /** @var string $destinationPath */
         $destinationPath = $input->getArgument('destination-path');

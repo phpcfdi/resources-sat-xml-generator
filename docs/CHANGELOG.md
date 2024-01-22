@@ -4,9 +4,13 @@
 
 Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
+Importante: **Cambiar la versión en `Application::__construct`**. 
+
 ## Versión 3.0.0 2024-01-22
 
 - Se actualiza la versión mínima de PHP a 8.3.
+- Se corrigen los problemas encontrados por PhpStorm.
+- Se establece la versión correcta en `Application::__construct`.
 
 ## Mantenimiento 2024-01-22
 

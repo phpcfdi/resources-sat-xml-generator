@@ -22,6 +22,9 @@ final class Downloader implements DownloaderInterface
         $this->httpClient = $httpClient ?? HttpClient::create();
     }
 
+    /**
+     * @throws DownloaderException
+     */
     public function downloadTo(string $source, string $destination): void
     {
         try {

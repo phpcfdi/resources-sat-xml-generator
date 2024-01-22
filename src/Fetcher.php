@@ -10,11 +10,11 @@ use PhpCfdi\ResourcesSatXmlGenerator\NsRegistry\Locations;
 use PhpCfdi\ResourcesSatXmlGenerator\Retrievers\XmlRetriever;
 use PhpCfdi\ResourcesSatXmlGenerator\Retrievers\XmlRetrievers;
 
-class Fetcher
+readonly class Fetcher
 {
-    private readonly Downloader $downloader;
+    private Downloader $downloader;
 
-    public function __construct(private readonly ObserverInterface $observer)
+    public function __construct(private ObserverInterface $observer)
     {
         $this->downloader = new Downloader($observer);
     }

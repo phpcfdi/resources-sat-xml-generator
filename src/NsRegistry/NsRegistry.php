@@ -7,10 +7,10 @@ namespace PhpCfdi\ResourcesSatXmlGenerator\NsRegistry;
 use JsonException;
 use RuntimeException;
 
-final class NsRegistry
+final readonly class NsRegistry
 {
     /** @var NsEntry[] */
-    private readonly array $entries;
+    private array $entries;
 
     public function __construct(NsEntry ...$entries)
     {
@@ -32,7 +32,7 @@ final class NsRegistry
             throw new RuntimeException('Namespace registry contents is not an array of entries', 0, $exception);
         }
         $entries = [];
-        /** @var array<string, string|null> $entry */
+        /** @var array<string, scalar|null> $entry */
         foreach ($baseEntries as $entry) {
             $entries[] = new NsEntry(
                 strval($entry['xsd'] ?? ''),

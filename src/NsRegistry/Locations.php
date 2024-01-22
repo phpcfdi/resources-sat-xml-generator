@@ -11,10 +11,10 @@ use Traversable;
 /**
  * @implements IteratorAggregate<string>
  */
-final class Locations implements IteratorAggregate
+final readonly class Locations implements IteratorAggregate
 {
     /** @var string[] */
-    private readonly array $locations;
+    private array $locations;
 
     public function __construct(string ...$locations)
     {

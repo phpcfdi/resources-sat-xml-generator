@@ -18,7 +18,11 @@ final class FetchSatCommand extends Command
 {
     public const NS_REGISTRY = 'https://raw.githubusercontent.com/phpcfdi/sat-ns-registry/master/complementos_v1.json';
 
-    protected static $defaultName = 'fetch:sat';
+    /** @noinspection PhpMissingParentCallCommonInspection */
+    public static function getDefaultName(): string
+    {
+        return 'fetch:sat';
+    }
 
     /** @noinspection PhpMissingParentCallCommonInspection */
     protected function configure(): void

@@ -12,7 +12,7 @@ build:
       tests:
         override:
           - php-scrutinizer-run --enable-security-analysis
-          - command: php -dxdebug.mode=coverage vendor/bin/phpunit --verbose --coverage-clover=build/coverage.clover
+          - command: php -dxdebug.mode=coverage vendor/bin/phpunit --coverage-clover=build/coverage.clover
             coverage:
               file: build/coverage.clover
               format: clover

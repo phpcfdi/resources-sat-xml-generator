@@ -15,7 +15,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 final class FetchCommand extends Command
 {
-    protected static $defaultName = 'fetch:urls';
+    /** @noinspection PhpMissingParentCallCommonInspection */
+    public static function getDefaultName(): string
+    {
+        return 'fetch:urls';
+    }
 
     /** @noinspection PhpMissingParentCallCommonInspection */
     protected function configure(): void

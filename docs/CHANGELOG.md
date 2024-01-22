@@ -8,7 +8,7 @@ Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
 - Se corrige un posible bug en `Downloader` al dividir un texto en dos partes.
   La segunda parte podría no existir y no estaba tratado correctamente.
-- Se le da mantenimiento a el proyecto:
+- Se le da mantenimiento al proyecto:
   - Actualización de licencia. Feliz 2023.
   - Actualización del emblema de construcción.
   - Se agrega PHP 8.2 a la matrix de pruebas.

@@ -45,7 +45,7 @@ final class FetchSatCommand extends Command
         $downloadXsd = in_array($type, ['all', 'xsd'], true);
         $downloadXslt = in_array($type, ['all', 'xslt'], true);
         /** @var string $registryLocation */
-        $registryLocation = $input->getOption('ns-registry') ?? '' ?: self::NS_REGISTRY;
+        $registryLocation = $input->getOption('ns-registry') ?: self::NS_REGISTRY;
         /** @var string $destinationPath */
         $destinationPath = $input->getArgument('destination-path');
         /** @var string[] $ignoredLocations */

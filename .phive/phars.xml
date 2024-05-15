@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phive xmlns="https://phar.io/phive">
-  <phar name="phpcs" version="^3.8.1" installed="3.8.1" location="./tools/phpcs" copy="false"/>
-  <phar name="phpcbf" version="^3.8.1" installed="3.8.1" location="./tools/phpcbf" copy="false"/>
-  <phar name="php-cs-fixer" version="^3.48.0" installed="3.48.0" location="./tools/php-cs-fixer" copy="false"/>
-  <phar name="phpstan" version="^1.10.56" installed="1.10.56" location="./tools/phpstan" copy="false"/>
-  <phar name="psalm" version="^5.20.0" installed="5.20.0" location="./tools/psalm" copy="false"/>
+  <phar name="phpcs" version="^3.9.2" installed="3.9.2" location="./tools/phpcs" copy="false"/>
+  <phar name="phpcbf" version="^3.9.2" installed="3.9.2" location="./tools/phpcbf" copy="false"/>
+  <phar name="php-cs-fixer" version="^3.57.1" installed="3.57.1" location="./tools/php-cs-fixer" copy="false"/>
+  <phar name="phpstan" version="^1.11.1" installed="1.11.1" location="./tools/phpstan" copy="false"/>
+  <phar name="psalm" version="^5.24.0" installed="5.24.0" location="./tools/psalm" copy="false"/>
 </phive>

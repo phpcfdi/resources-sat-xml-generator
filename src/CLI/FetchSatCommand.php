@@ -16,7 +16,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 final class FetchSatCommand extends Command
 {
-    public const NS_REGISTRY = 'https://raw.githubusercontent.com/phpcfdi/sat-ns-registry/master/complementos_v1.json';
+    public const string NS_REGISTRY = 'https://raw.githubusercontent.com/phpcfdi/sat-ns-registry/master/complementos_v1.json';
 
     /** @noinspection PhpMissingParentCallCommonInspection */
     public static function getDefaultName(): string

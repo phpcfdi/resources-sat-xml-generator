@@ -6,6 +6,19 @@ Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
 Importante: **Cambiar la versión en `Application::__construct`**. 
 
+## Versión 3.0.1 2024-05-15
+
+- Se corrige el problema encontrado por Psalm poniendo el tipo apropiado en la constante `NS_REGISTRY`.
+
+Actualizaciones de mantenimiento:
+
+- Se actualiza PHPUnit a la versión 11.
+- Se actualizan las acciones de GitHub a versión 4.
+- Se remueven las rutas fijas en la ejecución del flujo de trabajo `phpcs`.
+- Se muestra la versión de Psalm en el flujo de trabajo pues no se muestra en la instalación.
+- Se agrega la herramienta `composer-normalize` a las herramientas de desarrollo.
+- Se actualizan las herramientas de desarrollo.
+
 ## Versión 3.0.0 2024-01-22
 
 - Se actualiza la versión mínima de PHP a 8.3.

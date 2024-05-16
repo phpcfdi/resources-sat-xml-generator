@@ -4,7 +4,11 @@
 
 Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
-Importante: **Cambiar la versión en `Application::__construct`**. 
+Importante: **Cambiar la versión en `Application::__construct`**.
+
+## Versión 3.0.2 2024-05-15
+
+- Se establece correctamente el número de versión.
 
 ## Versión 3.0.1 2024-05-15
 

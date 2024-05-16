@@ -10,7 +10,7 @@ class Application extends SymfonyApplication
 {
     public function __construct()
     {
-        parent::__construct('resources-sat-xml-generator', '3.0.0');
+        parent::__construct('resources-sat-xml-generator', '3.0.2');
         $this->add(new FetchSatCommand());
         $this->add(new FetchCommand());
     }

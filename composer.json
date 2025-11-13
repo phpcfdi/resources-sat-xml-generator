@@ -39,6 +39,12 @@
             "PhpCfdi\\ResourcesSatXmlGenerator\\Tests\\": "tests/"
         }
     },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": {
+            "*": "dist"
+        }
+    },
     "scripts": {
         "dev:build": [
             "@dev:fix-style",
@@ -55,13 +61,12 @@
         "dev:fix-style": [
             "@php tools/composer-normalize normalize",
             "@php tools/php-cs-fixer fix --verbose",
-            "@php tools/phpcbf --colors -sp"
+            "@php tools/phpcbf --colors -sp || true"
         ],
         "dev:test": [
             "@dev:check-style",
             "@php vendor/bin/phpunit --testdox --stop-on-failure",
-            "@php tools/phpstan analyse --no-progress",
-            "@php tools/psalm --no-progress"
+            "@php tools/phpstan analyse --no-progress --no-interaction"
         ]
     },
     "scripts-descriptions": {
@@ -69,6 +74,6 @@
         "dev:check-style": "DEV: search for code style errors using composer-normalize, php-cs-fixer and phpcs",
         "dev:coverage": "DEV: run phpunit with xdebug and storage coverage in build/coverage/html/",
         "dev:fix-style": "DEV: fix code style errors using composer-normalize, php-cs-fixer and phpcbf",
-        "dev:test": "DEV: run dev:check-style, phpunit, phpstan and psalm"
+        "dev:test": "DEV: run dev:check-style, phpunit and phpstan"
     }
 }

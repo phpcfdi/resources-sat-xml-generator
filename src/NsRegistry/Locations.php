@@ -13,12 +13,12 @@ use Traversable;
  */
 final readonly class Locations implements IteratorAggregate
 {
-    /** @var string[] */
+    /** @var list<string> */
     private array $locations;
 
     public function __construct(string ...$locations)
     {
-        $this->locations = $locations;
+        $this->locations = array_values($locations);
     }
 
     public function append(string ...$locations): self

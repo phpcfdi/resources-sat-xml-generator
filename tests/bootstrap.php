@@ -28,7 +28,7 @@ call_user_func(function (): void {
 
     // Kill the web server when the process ends
     /** @var Closure(): void $shutdownKillPid */
-    $shutdownKillPid = function () use ($pid): void {
+    $shutdownKillPid = static function () use ($pid): void {
         exec('kill ' . $pid);
     };
     register_shutdown_function($shutdownKillPid);

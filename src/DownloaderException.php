@@ -13,7 +13,7 @@ final class DownloaderException extends Exception
 
     private readonly string $destination;
 
-    public function __construct(string $source, string $destination, Throwable $previous = null)
+    public function __construct(string $source, string $destination, ?Throwable $previous = null)
     {
         parent::__construct(
             message: "Unable to download $source to $destination",

@@ -1,28 +1,27 @@
-FROM php:8.4-cli
+FROM php:8.4-cli-alpine
 
 COPY . /opt/generator
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
-# COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+# install dependencies for php modules
+RUN set -e \
+    && apk add git libzip libzip-dev \
+    && docker-php-ext-install zip \
+    && apk del libzip-dev
 
-RUN set -e && \
-    apt-get update && \
-    apt-get install -y --no-install-recommends git zip unzip libzip-dev && \
-    apt-get clean -y && \
-    rm -rf /var/lib/apt/lists/*
+# set up php
+RUN set -e \
+    && mv /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini \
+    && sed -i 's/^variables_order.*/variables_order=EGPCS/' /usr/local/etc/php/php.ini \
+    && php -i \
+    && php -m
 
-RUN set -e && \
-    php -i && \
-    php -m && \
-    docker-php-ext-install zip
+# build project
+RUN set -e \
+    && export COMPOSER_ALLOW_SUPERUSER=1 \
+    && composer diagnose || true \
+    && rm -r -f /opt/generator/composer.lock /opt/generator/vendor \
+    && composer update --working-dir=/opt/generator --ansi --no-dev --prefer-dist --optimize-autoloader --no-interaction \
+    && rm -rf "$(composer config cache-dir --global)" "$(composer config data-dir --global)" "$(composer config home --global)"
 
-RUN set -e && \
-    curl -o /usr/bin/composer https://getcomposer.org/download/latest-stable/composer.phar && \
-    chmod +x /usr/bin/composer && \
-    /usr/bin/composer diagnose || true
-
-RUN set -e && \
-    cd /opt/generator && \
-    export COMPOSER_ALLOW_SUPERUSER=1 && \
-    composer install --ansi --no-dev --no-cache --prefer-dist --no-progress --no-interaction
-
-ENTRYPOINT ["php", "/opt/generator/bin/resources-sat-xml-generator"]
+ENTRYPOINT ["/usr/local/bin/php", "/opt/generator/bin/resources-sat-xml-generator"]

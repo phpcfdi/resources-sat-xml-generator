@@ -6,6 +6,28 @@ Utilizamos [Versionado Semántico 2.0.0](SEMVER.md).
 
 Importante: **Cambiar la versión en `Application::__construct`**.
 
+## Versión 3.0.3 2025-11-13
+
+- Se actualiza el soporte de PHP 8.4.
+- Se corrigen las insignias de SonarQube Cloud.
+- Se actualiza el año de la licencia a 2025.
+- Se cambia la base de la construcción de la imagen de Docker a `php:8.4-cli-alpine`.
+
+Actualizaciones de mantenimiento:
+
+- Se actualiza PHPUnit a la versión 12.
+- Se actualiza la configuración de PHPUnit para que muestre todos los problemas.
+- Se actualiza la integración con SonarQube Cloud.
+- Se elimina la herramienta Psalm de las herramientas de desarrollo.
+- En los flujos de trabajo de GitHub:
+  - Se usa la variable `GITHUB_OUTPUT` en lugar de la directiva obsoleta `::set-output`.
+  - Se agrega PHP 8.4 a la matriz de pruebas.
+  - Se ejecutan los trabajos en PHP 8.4.
+  - Se corrige el trabajo `composer-normalize` para que detecte cuando hay un problema.
+- Se agrega el archivo `.editorconfig`.
+- Se actualiza el estándar de código.
+- Se actualizan las herramientas de desarrollo.
+
 ## Versión 3.0.2 2024-05-15
 
 - Se establece correctamente el número de versión.

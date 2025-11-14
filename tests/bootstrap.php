@@ -27,8 +27,8 @@ call_user_func(function (): void {
     $pid = (int) $output[0];
 
     // Kill the web server when the process ends
-    /** @var callable(): void $shutdownKillPid */
-    $shutdownKillPid = function () use ($pid): void {
+    /** @var Closure(): void $shutdownKillPid */
+    $shutdownKillPid = static function () use ($pid): void {
         exec('kill ' . $pid);
     };
     register_shutdown_function($shutdownKillPid);
@@ -36,6 +36,7 @@ call_user_func(function (): void {
     // wait until server is responding
     do {
         usleep(10000); // wait 0.01 seconds before each try
+        /** @phpstan-var list<string> $headers */
         $headers = @get_headers('http://localhost:8999/README.md') ?: [];
         $httpResponse = strval($headers[0] ?? '');
     } while (! str_contains($httpResponse, '200 OK'));
